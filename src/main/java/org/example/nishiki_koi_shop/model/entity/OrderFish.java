@@ -27,6 +27,7 @@ public class OrderFish {
     private LocalDate deliveryDate;
     private LocalDate paymentMethod;
     private LocalDate createdDate;
+    private LocalDate deletedAt;
 
     public enum Status {
         PENDING, APPROVED, REJECTED, CANCELLED
