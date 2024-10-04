@@ -36,6 +36,10 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public AuthDto login(SignInForm form) {
+
+        User user = userRepository.findByEmail(form.getEmail())
+                .orElseThrow(() -> new IllegalArgumentException("User not found with email: " + form.getEmail()));
+
         Authentication authentication;
         try {
             authentication = authenticationManager.authenticate(
@@ -50,8 +54,7 @@ public class AuthServiceImpl implements AuthService {
         String accessToken = jwtTokenProvider.generateAccessToken(authentication);
         String refreshToken = jwtTokenProvider.generateRefreshToken(authentication);
 
-        User user = userRepository.findByEmail(form.getEmail())
-                .orElseThrow(() -> new IllegalArgumentException("User not found with email: " + form.getEmail()));
+
 
         log.info("User {} logged in successfully", user.getEmail());
 
@@ -108,4 +111,5 @@ public class AuthServiceImpl implements AuthService {
         }
         throw new InvalidRefreshTokenException(refreshToken);
     }
+
 }
