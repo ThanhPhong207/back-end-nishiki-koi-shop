@@ -20,6 +20,7 @@ public class Feedback {
 
     private String comment;
     private LocalDate createdDate;
+    private LocalDate deletedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
