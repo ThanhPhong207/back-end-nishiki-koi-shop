@@ -24,6 +24,7 @@ public class Farm {
     private String description;
     private LocalDate createdDate;
     private String contactInfo;
+    private LocalDate deletedAt;
 
     @OneToMany(mappedBy = "farm")
     private List<Fish> fishList;
