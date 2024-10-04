@@ -24,6 +24,7 @@ public class Fish {
     private long size;
     private Integer quantity;
     private LocalDate createdDate;
+    private LocalDate deletedAt;
 
     @ManyToOne
     @JoinColumn(name = "fish_type_id", nullable = false)
