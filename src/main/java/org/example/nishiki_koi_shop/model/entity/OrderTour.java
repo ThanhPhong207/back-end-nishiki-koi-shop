@@ -26,6 +26,7 @@ public class OrderTour {
     private LocalDate  tourStartDate;
     private String paymentMethod;
     private LocalDate createdDate;
+    private LocalDate deletedAt; // để xử lý xóa mềm
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)

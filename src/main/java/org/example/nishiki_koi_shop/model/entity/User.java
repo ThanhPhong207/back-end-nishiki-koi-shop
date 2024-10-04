@@ -32,6 +32,7 @@ public class User implements UserDetails {
     private String phoneNumber;
     private String address;
     private LocalDate createdDate;
+    private LocalDate deletedAt;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "Role_ID", nullable = false)

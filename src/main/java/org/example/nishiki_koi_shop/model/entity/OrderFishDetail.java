@@ -3,6 +3,8 @@ package org.example.nishiki_koi_shop.model.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -26,4 +28,5 @@ public class OrderFishDetail {
 
     private Integer quantity;
     private long price;
+    private LocalDate deletedAt;
 }

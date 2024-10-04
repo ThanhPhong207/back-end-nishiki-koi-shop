@@ -28,6 +28,7 @@ public class Tour {
     private long price;
     private Date createdDate;
     private Integer max_participants;
+    private LocalDate deletedAt; // trường cho xóa mềm
 
     @ManyToOne
     @JoinColumn(name = "farm_id", nullable = false)
